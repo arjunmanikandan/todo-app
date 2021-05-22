@@ -1,11 +1,12 @@
-import config from './config';
 import { rndString } from '@laufire/utils/random';
+import config from './config';
 
-const refreshIDLength = 4;
+const { refreshIDLength } = config;
 
 const seed = {
-	count: config.countStart,
 	refreshID: rndString(refreshIDLength),
+	input: '',
+	todos: [],
 };
 
 export default seed;
