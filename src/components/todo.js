@@ -1,12 +1,39 @@
+import context from '../core/context';
 import { React } from 'react';
-const style = {
+const sharedStyle = {
 	height: '1em',
 };
 
-const Todo = (todo) => {
-	const { id, text } = todo;
+const completedStyle = {
+	...sharedStyle,
+	color: 'red',
+};
 
-	return <div key={ id } style={ style }>{text}</div>;
+const activeStyle = {
+	...sharedStyle,
+	color: 'black',
+};
+
+const Todo = (todo) => {
+	const { id, text, completed } = todo;
+	const style = completed ? completedStyle : activeStyle;
+
+	return <div key={ id } style={ style }>
+		<span>
+			<input
+				type="checkbox"
+				checkedDefault={ completed }
+				onChange={ () => context.actions.toggleTodo(todo) }
+			/>
+		</span>
+		<span>{text}</span>
+		<span>
+			<button
+				onClick={ () => context.actions.removeTodo(todo) }
+			>X
+			</button>
+		</span>
+	</div>;
 };
 
 export default Todo;
