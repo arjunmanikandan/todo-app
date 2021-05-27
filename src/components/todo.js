@@ -22,7 +22,7 @@ const Todo = (todo) => {
 		<span>
 			<input
 				type="checkbox"
-				checkedDefault={ completed }
+				checked={ completed }
 				onChange={ () => context.actions.toggleTodo(todo) }
 			/>
 		</span>
