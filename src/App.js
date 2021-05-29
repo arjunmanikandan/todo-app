@@ -7,6 +7,7 @@ import context from './core/context';
 import TodoList from './components/todoList';
 import Toggletodo from './components/toggletodo';
 import ClearButton from './components/clearButton';
+import FilterBar from './components/filterBar';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
@@ -19,6 +20,7 @@ const App = () => {
 			<div>{AddTodo()}</div>
 			<div>{TodoList()}</div>
 			<div>{ClearButton()}</div>
+			<div>{FilterBar()}</div>
 			<div>RefreshId:{context.state.refreshID}</div>
 		</div>
 	);

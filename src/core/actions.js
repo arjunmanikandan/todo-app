@@ -23,6 +23,11 @@ const toggleAllTodo = (context, isComplete) => ({
 const clearButton = ({ state }) => ({
 	todos: TodoManager.clearButton(state.todos),
 });
+
+const setFilter = (context, filter) => ({
+	filter,
+});
+
 const actions = {
 	updateInputValue,
 	addTodo,
@@ -30,6 +35,7 @@ const actions = {
 	removeTodo,
 	toggleAllTodo,
 	clearButton,
+	setFilter,
 };
 
 export default actions;
