@@ -29,12 +29,15 @@ const toggleAllTodo = (todos, isComplete) => todos.map((todo) => ({
 
 const getTodoCount = (todos) => todos.length;
 
+const clearButton = (todos) => todos.filter((todo) => !todo.completed);
+
 const TodoManager = {
 	addTodo,
 	toggleTodo,
 	removeTodo,
 	toggleAllTodo,
 	getTodoCount,
+	clearButton,
 };
 
 export default TodoManager;

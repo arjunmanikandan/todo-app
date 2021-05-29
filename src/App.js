@@ -6,6 +6,7 @@ import TodoInput from './components/todoInput';
 import context from './core/context';
 import TodoList from './components/todoList';
 import Toggletodo from './components/toggletodo';
+import ClearButton from './components/clearButton';
 
 const App = () => {
 	useEffect(SampleService.sayHai, []);
@@ -17,6 +18,7 @@ const App = () => {
 			</div>
 			<div>{AddTodo()}</div>
 			<div>{TodoList()}</div>
+			<div>{ClearButton()}</div>
 			<div>RefreshId:{context.state.refreshID}</div>
 		</div>
 	);
