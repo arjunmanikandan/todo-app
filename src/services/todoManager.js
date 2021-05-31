@@ -27,17 +27,17 @@ const toggleAllTodo = (todos, isComplete) => todos.map((todo) => ({
 	completed: isComplete,
 }));
 
-const getTodoCount = (todos) => todos.length;
-
-const clearButton = (todos) => todos.filter((todo) => !todo.completed);
-
-const getNoCompletedCount = (todos) => todos.length;
-
 const Filters = {
 	all: () => true,
 	active: (todo) => !todo.completed,
 	completed: (todo) => todo.completed,
 };
+
+const getTodoCount = (todos) => todos.length;
+
+const clearButton = (todos) => todos.filter(Filters.active);
+
+const getNoCompletedCount = (todos) => todos.length;
 
 const filterTodos = (todos, filter) => todos.filter(Filters[filter]);
 
