@@ -4,9 +4,9 @@ import TodoManager from '../services/todoManager';
 
 const ClearButton = () => {
 	const { todos } = context.state;
-	const NoCompletedTodos = TodoManager.getNoCompletedCount(todos) === 0;
+	const hasNoTodos = TodoManager.getCompletedCount(todos) === 0;
 
-	return NoCompletedTodos
+	return hasNoTodos
 		? null
 		: <button onClick={ context.actions.clearButton }>ClearButton</button>;
 };

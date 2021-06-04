@@ -33,13 +33,28 @@ const Filters = {
 	completed: (todo) => todo.completed,
 };
 
-const getTodoCount = (todos) => todos.length;
+const getTodoCount = (todos) => todos.filter(Filters.active).length;
 
 const clearButton = (todos) => todos.filter(Filters.active);
 
 const getNoCompletedCount = (todos) => todos.length;
 
+const getCompletedCount = (todos) => todos.filter(Filters.completed).length;
+
 const filterTodos = (todos, filter) => todos.filter(Filters[filter]);
+
+const hasNoTodos = (todos) => getTodoCount(todos) === 0;
+
+const editTodo = (
+	todos, editing, text
+) =>
+	todos.map((todo) => (todo.id !== editing.id
+		? todo
+		: {
+			...todo,
+			text,
+		}
+	));
 
 const TodoManager = {
 	addTodo,
@@ -50,6 +65,9 @@ const TodoManager = {
 	clearButton,
 	getNoCompletedCount,
 	filterTodos,
+	hasNoTodos,
+	getCompletedCount,
+	editTodo,
 };
 
 export default TodoManager;
