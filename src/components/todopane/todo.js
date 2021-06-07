@@ -1,4 +1,4 @@
-import context from '../core/context';
+import context from '../../core/context';
 import { React } from 'react';
 const sharedStyle = {
 	height: '1em',

@@ -1,6 +1,6 @@
 import { React } from 'react';
-import context from '../core/context';
-import TodoManager from '../services/todoManager';
+import context from '../../core/context';
+import TodoManager from '../../services/todoManager';
 
 const ClearButton = () => {
 	const { todos } = context.state;

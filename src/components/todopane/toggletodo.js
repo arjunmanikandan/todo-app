@@ -1,7 +1,7 @@
 /* eslint-disable indent */
-import context from '../core/context';
+import context from '../../core/context';
 import { React } from 'react';
-import TodoManager from '../services/todoManager';
+import TodoManager from '../../services/todoManager';
 
 const Toggletodo = () => {
 	const isChecked = TodoManager.getTodoCount(context.state.todos) === 0;

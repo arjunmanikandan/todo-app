@@ -1,7 +1,7 @@
-import context from '../core/context';
+import context from '../../core/context';
 import Todo from './todo';
 import { React } from 'react';
-import TodoManager from '../services/todoManager';
+import TodoManager from '../../services/todoManager';
 
 const TodoList = () => {
 	const { todos, filter } = context.state;

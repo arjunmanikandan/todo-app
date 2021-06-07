@@ -1,29 +1,25 @@
 import { React, useEffect } from 'react';
-import './App.css';
-import SampleService from './services/sample';
+// import './App.css';
+// import SampleService from './services/sample';
+import TaskManager from './services/taskManager';
 // import AddTodo from './components/addTodo';
-import TodoInput from './components/todoInput';
-import context from './core/context';
-import TodoList from './components/todoList';
-import Toggletodo from './components/toggletodo';
-import ClearButton from './components/clearButton';
-import FilterBar from './components/filterBar';
+// import TodoInput from './components/todoInput';
+// import context from './core/context';
+// import TodoList from './components/todoList';
+// import Toggletodo from './components/toggletodo';
+// import ClearButton from './components/clearButton';
+// import FilterBar from './components/filterBar';
 // import EditButton from './components/editButton';
-import ActionButton from './components/actionButton.js';
+// import ActionButton from './components/actionButton.js';
+import TaskPane from './components/taskpane';
+import TodoPane from './components/todopane';
 
 const App = () => {
-	useEffect(SampleService.sayHai, []);
+	useEffect(TaskManager.init, []);
 	return (
 		<div className="App">
-			<div>
-				{Toggletodo()}
-				{TodoInput()}
-				{ActionButton()}
-			</div>
-			<div>{TodoList()}</div>
-			<div>{ClearButton()}</div>
-			<div>{FilterBar()}</div>
-			<div>RefreshId:{context.state.refreshID}</div>
+			<div>{ TaskPane() }</div>
+			<div>{ TodoPane() }</div>
 		</div>
 	);
 };

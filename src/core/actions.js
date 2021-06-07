@@ -41,6 +41,10 @@ const editTodo = ({ state }) => ({
 	),
 });
 
+const setTasks = (context, tasks) => ({
+	tasks,
+});
+
 const actions = {
 	updateInputValue,
 	addTodo,
@@ -51,6 +55,7 @@ const actions = {
 	setFilter,
 	editTodo,
 	setEditing,
+	setTasks,
 };
 
 export default actions;
