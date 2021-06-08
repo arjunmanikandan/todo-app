@@ -7,6 +7,9 @@ const getTask = (Task) => ({
 	text: Task,
 });
 
+const removeTask = (tasks, task) =>
+	tasks.filter((data) => data.id !== task.id);
+
 const taskManager = () => ({
 	init: () => context.actions.setTasks([
 		getTask('Task1'),
@@ -15,6 +18,10 @@ const taskManager = () => ({
 	]),
 });
 
-const TaskManager = taskManager();
+const TaskManager = {
+	getTask,
+	removeTask,
+	taskManager,
+};
 
 export default TaskManager;
