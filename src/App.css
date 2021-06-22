@@ -7,6 +7,36 @@
 	pointer-events: none;
 }
 
+.FilterBtn{
+	background-color: green;
+	color: black;
+	border: 2px solid black;
+	border-radius: 5px;
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 20px;
+	letter-spacing: 0.8px;
+	word-spacing: -1.6px;
+	color: #000000;
+	font-weight: 700;
+	font-style: normal;
+	font-variant: normal;
+	margin-left: 3%;
+}
+
+.AddButton{
+	background-color: green;
+	color: black;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 6px 24px;
+	margin-left: 3%;
+	width: -12px;
+}
+
+.Btnspacing{
+	margin-top: 50px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
 		animation: App-logo-spin infinite 20s linear;

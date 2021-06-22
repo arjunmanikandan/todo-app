@@ -3,6 +3,6 @@ import FilterButton from './filterButton';
 const filters = ['all', 'active', 'completed'];
 
 const FilterBar = () =>
-	<div> {filters.map(FilterButton)} </div>;
+	<div className="Btnspacing"> {filters.map(FilterButton)} </div>;
 
 export default FilterBar;

@@ -7,7 +7,7 @@ const style = {
 	right : 0,
 	height: '100%',
 	width: '50%',
-	background: 'red',
+	background: 'green',
 };
 
 const TaskPane = () =>
