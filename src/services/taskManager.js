@@ -10,18 +10,20 @@ const getTask = (Task) => ({
 const removeTask = (tasks, task) =>
 	tasks.filter((data) => data.id !== task.id);
 
-const taskManager = () => ({
-	init: () => context.actions.setTasks([
-		getTask('Task1'),
-		getTask('Task 2'),
-		getTask('Task 3'),
-	]),
-});
+const addTask = (tasks, task) =>
+	tasks.concat(getTask(task));
+
+const init = () => {
+	context.actions.addTask('Task 1');
+	context.actions.addTask('Task 2');
+	context.actions.addTask('Task 3');
+};
 
 const TaskManager = {
 	getTask,
 	removeTask,
-	taskManager,
+	init,
+	addTask,
 };
 
 export default TaskManager;

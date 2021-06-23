@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import context from '../../core/context';
 import { React } from 'react';
 import TodoManager from '../../services/todoManager';
@@ -8,7 +9,10 @@ const FilterButton = (filter) => {
 
 	return notodos
 		? null
-		: <button onClick={ () => context.actions.setFilter(filter) }>
+		: <button
+				className="FilterBtn"
+				onClick={ () => context.actions.setFilter(filter) }
+				>
 			{filter} </button>;
 };
 

@@ -42,12 +42,16 @@ const editTodo = ({ state }) => ({
 	),
 });
 
-const setTasks = (context, tasks) => ({
-	tasks,
+const addTask = (context, task) => ({
+	tasks: TaskManager.addTask(context.state.tasks, task),
 });
 
 const removeTask = (context, task) => ({
-	todos: TaskManager.removeTask(context.state.tasks, task),
+	tasks: TaskManager.removeTask(context.state.tasks, task),
+});
+
+const addTaskToTodo = (context, task) => ({
+	todos: TodoManager.addTodo(context.state.todos, task.text),
 });
 
 const actions = {
@@ -60,8 +64,9 @@ const actions = {
 	setFilter,
 	editTodo,
 	setEditing,
-	setTasks,
+	addTask,
 	removeTask,
+	addTaskToTodo,
 };
 
 export default actions;
