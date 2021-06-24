@@ -6,12 +6,12 @@ const sharedStyle = {
 
 const completedStyle = {
 	...sharedStyle,
-	color: 'red',
+	color: 'black',
 };
 
 const activeStyle = {
 	...sharedStyle,
-	color: 'black',
+	color: 'navy',
 };
 
 const Todo = (todo) => {
