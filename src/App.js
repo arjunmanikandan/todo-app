@@ -13,11 +13,11 @@ import TaskManager from './services/taskManager';
 // import ActionButton from './components/actionButton.js';
 import TaskPane from './components/taskpane';
 import TodoPane from './components/todopane';
-import Ticker from './services/ticker';
+// import Ticker from './services/ticker';
 
 const App = () => {
 	useEffect(TaskManager.init, []);
-	useEffect(Ticker.start, []);
+	// useEffect(Ticker.start, []);
 	return (
 		<div className="App">
 			<div>{ TaskPane() }</div>

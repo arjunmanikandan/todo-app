@@ -6,17 +6,8 @@ import TodoList from './todoList';
 import Toggletodo from './toggletodo';
 import { React } from 'react';
 
-const style = {
-	position: 'absolute',
-	top: 0,
-	left: 0,
-	height: '100%',
-	width: '50%',
-	background: 'red',
-};
-
 const TodoPane = () =>
-	<div style={ style }>
+	<div className="pane todopane">
 		<h3> TODO </h3>
 		<div>
 			{Toggletodo() }

@@ -16,7 +16,7 @@ const Task = (task) => {
 		<button onClick={ () => context.actions.removeTask(todo) }>X</button>;
 
 	return (
-		<div key={ id }>
+		<div key={ id } className="task">
 			<span>{ text }</span>
 			<span>{ AddButton(task)}</span>
 			<span>{ removeButton(task) }</span>
