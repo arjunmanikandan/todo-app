@@ -1,8 +1,8 @@
-import AddTodo from '../components/todopane/addTodo';
+import AddTodo from './addTodo';
 import { render, fireEvent } from '@testing-library/react';
-import context from '../core/context';
+import context from '../../core/context';
 
-jest.mock('../core/context', () => ({
+jest.mock('../../core/context', () => ({
 	state: { input: Symbol('input') },
 	actions: { addTodo: jest.fn() },
 }));
