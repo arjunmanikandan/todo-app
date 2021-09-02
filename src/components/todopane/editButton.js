@@ -1,10 +1,12 @@
 import context from '../../core/context';
 import { React } from 'react';
+import TodoManager from '../../services/todoManager';
 
 const EditButton = () =>
 	<button
-		disabled={ context.state.input === '' }
-		onClick={ context.actions.editTodo }
+		role="editButton"
+		disabled={ TodoManager.toCheckDisabledButton(context) }
+		onClick={ () => context.actions.editTodo() }
 	>	OK</button>;
 
 export default EditButton;

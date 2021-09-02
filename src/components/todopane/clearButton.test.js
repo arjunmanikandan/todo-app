@@ -4,7 +4,6 @@ import { fireEvent, render } from '@testing-library/react';
 import TodoManager from '../../services/todoManager';
 import context from '../../core/context';
 
-
 jest.mock('../../core/context', () => ({
 	state: { todos: Symbol('todos') },
 	actions: { clearButton: jest.fn() },

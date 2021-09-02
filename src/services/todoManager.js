@@ -55,6 +55,7 @@ const editTodo = (
 			text,
 		}
 	));
+const toCheckDisabledButton = ({ state }) => state.input === '';
 
 const TodoManager = {
 	addTodo,
@@ -68,6 +69,7 @@ const TodoManager = {
 	hasNoTodos,
 	getCompletedCount,
 	editTodo,
+	toCheckDisabledButton,
 };
 
 export default TodoManager;
