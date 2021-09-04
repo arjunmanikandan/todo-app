@@ -4,10 +4,6 @@ import { fireEvent, render } from '@testing-library/react';
 import context from '../../core/context';
 import TodoManager from '../../services/todoManager';
 
-jest.mock('../../core/context', () => ({
-	actions: { editTodo: jest.fn() },
-}));
-
 describe('test Buttons', () => {
 	test('editButton to be visible on screen ', () => {
 		jest.spyOn(TodoManager, 'toCheckDisabledButton').mockReturnValue(false);
@@ -35,6 +31,8 @@ describe('test Buttons', () => {
 
 	test('click event', () => {
 		jest.spyOn(TodoManager, 'toCheckDisabledButton').mockReturnValue(false);
+		jest.spyOn(context.actions, 'editTodo')
+			.mockImplementation(() => jest.fn());
 		const component = render(editButton()).getByRole('editButton');
 
 		fireEvent.click(component);
