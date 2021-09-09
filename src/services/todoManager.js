@@ -43,7 +43,7 @@ const getCompletedCount = (todos) => todos.filter(Filters.completed).length;
 
 const filterTodos = (todos, filter) => todos.filter(Filters[filter]);
 
-const hasNoTodos = (todos) => getTodoCount(todos) === 0;
+const hasNoTodos = (todos) => todos.length;
 
 const editTodo = (
 	todos, editing, text
@@ -56,6 +56,8 @@ const editTodo = (
 		}
 	));
 const toCheckDisabledButton = ({ state }) => state.input === '';
+
+const isChecked = (todos) => getTodoCount(todos) === 0;
 
 const TodoManager = {
 	addTodo,
@@ -70,6 +72,7 @@ const TodoManager = {
 	getCompletedCount,
 	editTodo,
 	toCheckDisabledButton,
+	isChecked,
 };
 
 export default TodoManager;

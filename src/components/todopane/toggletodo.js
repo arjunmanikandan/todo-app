@@ -4,12 +4,13 @@ import { React } from 'react';
 import TodoManager from '../../services/todoManager';
 
 const Toggletodo = () => {
-	const isChecked = TodoManager.getTodoCount(context.state.todos) === 0;
+	const isChecked = TodoManager.isChecked(context.state.todos);
 	const notodos = TodoManager.hasNoTodos(context.state.todos) === 0;
 
 	return notodos
 		? null
 		:	<input
+				role="toggleTodo"
 				type="checkbox"
 				checked={ isChecked }
 				onChange={ () => context.actions.toggleAllTodo(!isChecked) }
